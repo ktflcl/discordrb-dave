@@ -540,7 +540,7 @@ module Discordrb::Voice
         return
       end
 
-      track_pending_transition(transition_id)
+      track_pending_transition(transition_id, activate_pending_session: true)
       @bot.debug("DAVE: Transition #{transition_id} is ready")
       send_dave_ready_for_transition(transition_id)
     rescue Discordrb::Voice::DAVE::Error => e
